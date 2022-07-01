@@ -13,7 +13,6 @@
 	
 		Member m = new Member(1, "Alice", "alice@gmail.com", false);
 		
-		
 		ArrayList<Member> members = new ArrayList<Member>();
 		
 		members.add(new Member(1, "Alice", "alice@gmail.com", false));
@@ -25,6 +24,30 @@
 	%>
 
 	<h1><%=title %></h1>
+	
+	
+		<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Active</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% for (Member member : members) { %>
+			<tr>
+				<td><%=member.getId() %></td>
+				<td><%=member.getName() %></td>
+				<td><%=member.getEmail() %></td>
+				<td><%=member.isActive() ? "Active" : "Inactive" %></td>
+			</tr>
+		<% } %>
+		</tbody>
+	</table>
+	
+	
 
 	<ul>
 	
@@ -78,24 +101,7 @@
 	%>
 	
 	
-	<table>
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Active</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Alice</td>
-				<td>alice@gmail.com</td>
-				<td>true</td>
-			</tr>
-		</tbody>
-	</table>
+
 	
 	
 	<ol>
